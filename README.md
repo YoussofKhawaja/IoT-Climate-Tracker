@@ -1,10 +1,10 @@
 # Temperature and Humidity Sensor
 
-This project uses an Arduino Uno and a DHT22 sensor to measure temperature and humidity and send the data to a web API.
+This project uses an Arduino Uno and a DHT11 sensor to measure temperature and humidity and send the data to a web API.
 
 ## Hardware components
-- Arduino Uno
-- DHT22 sensor
+- ESP8266
+- DHT11 sensor
 - Breadboard
 - Jumper wires
 - USB cable
@@ -14,10 +14,10 @@ This project uses an Arduino Uno and a DHT22 sensor to measure temperature and h
 - DHT sensor library
 
 ## Connection diagram
-The connection diagram shows how to connect the DHT22 sensor to the Arduino Uno:
+The connection diagram shows how to connect the DHT11 sensor to the ESP8266:
 - Connect the VCC pin of the sensor to 3.3V on the Arduino.
 - Connect the GND pin of the sensor to GND on the Arduino.
-- Connect the data pin of the sensor to digital pin 2 on the Arduino.
+- Connect the data pin of the sensor to digital pin 2 (D4) on the Arduino.
 
 ## Code
 The code for this project consists of two parts: the setup function and the loop function.
