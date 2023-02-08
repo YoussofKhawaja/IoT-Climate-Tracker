@@ -2,6 +2,13 @@
 
 This project uses an Arduino Uno and a DHT11 sensor to measure temperature and humidity and send the data to a web API and also there web server you can accses it using ip.
 
+  [![Build Status](https://img.shields.io/github/forks/YoussofKhawaja/IoT-Climate-Tracker.svg)](https://github.com/YoussofKhawaja/IoT-Climate-Tracker)
+  [![Build Status](https://img.shields.io/github/stars/YoussofKhawaja/IoT-Climate-Tracker.svg)](https://github.com/YoussofKhawaja/IoT-Climate-Tracker)
+  [![License](https://img.shields.io/github/license/YoussofKhawaja/IoT-Climate-Tracker.svg)](https://github.com/YoussofKhawaja/IoT-Climate-Tracker)
+  [![Build Status](https://img.shields.io/travis/YoussofKhawaja/IoT-Climate-Tracker/master.svg)](https://travis-ci.org/YoussofKhawaja/IoT-Climate-Tracker)
+  [![Dependency Status](https://www.versioneye.com/user/projects/YoussofKhawaja/IoT-Climate-Tracker/badge.svg)](https://www.versioneye.com/user/projects/YoussofKhawaja/IoT-Climate-Tracker)
+
+
 ## Hardware components
 - ESP8266
 - DHT11 sensor
