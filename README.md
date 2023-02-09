@@ -31,6 +31,9 @@ The code for this project consists of two parts: the setup function and the loop
 - The setup function initializes the serial communication, the DHT sensor and the API endpoint.
 - The loop function reads the temperature and humidity values from the DHT sensor, sends the data to the API endpoint and logs the response to the serial monitor.
 
+##API EndPoint
+{ur host}/api/DHTData (for get and post)
+
 ## Installation
 - Install the Arduino IDE from the official website.
 - Connect the hardware components as shown in the connection diagram.
