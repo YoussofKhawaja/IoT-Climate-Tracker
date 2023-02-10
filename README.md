@@ -43,8 +43,13 @@ The code for this project consists of two parts: the setup function and the loop
 - Download the DHT sensor library and install it in the Arduino IDE.
 - Download the code for this project and open it in the Arduino IDE.
 - Update the API endpoint and other variables in the code as needed.
-- Upload the code to the Arduino Uno.
+- Upload the code to the NodeMCU ESP8266.
 - Open the serial monitor in the Arduino IDE to view the log messages.
+
+## Installation for Web Api
+- Install .Net 7
+- Install postgres for database
+- run command in project (dotnet run)
 
 ## Contributing
 If you have any suggestions or improvements for this project, feel free to open a pull request on GitHub.
