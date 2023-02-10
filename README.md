@@ -7,6 +7,9 @@ This project uses an ESP8266 and a DHT11 sensor to measure temperature and humid
   [![License](https://img.shields.io/github/license/YoussofKhawaja/IoT-Climate-Tracker.svg)](https://github.com/YoussofKhawaja/IoT-Climate-Tracker)
   [![Build Status](https://img.shields.io/travis/YoussofKhawaja/IoT-Climate-Tracker/master.svg)](https://travis-ci.org/YoussofKhawaja/IoT-Climate-Tracker)
   [![Dependency Status](https://www.versioneye.com/user/projects/YoussofKhawaja/IoT-Climate-Tracker/badge.svg)](https://www.versioneye.com/user/projects/YoussofKhawaja/IoT-Climate-Tracker)
+## Preview for web server and api
+- [Web server](https://localclimate.youssofkhawaja.com)
+- [API](https://dhtdataapi.azurewebsites.net/api/DHTData) (Get everything in database saved)
 
 
 ## Hardware components
