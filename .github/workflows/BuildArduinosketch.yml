@@ -1,0 +1,26 @@
+name: Build Arduino sketch
+
+on: [push]
+
+env:
+  ARDUINO_IDE_VERSION: 1.8.13
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y curl tar
+    
+    - name: Download and install Arduino IDE
+      run: |
+        curl -fsSL https://downloads.arduino.cc/arduino-$ARDUINO_IDE_VERSION-linux64.tar.xz | tar xJf - -C $HOME/
+        export PATH=$PATH:$HOME/arduino-$ARDUINO_IDE_VERSION
+        arduino --install-boards esp8266:esp8266:nodemcuv2
+    
+    - name: Build Arduino sketch
+      run: |
+        arduino --board esp8266:esp8266:nodemcuv2 --verify Arduino/ArduinoDHT/ArduinoDHT.ino
