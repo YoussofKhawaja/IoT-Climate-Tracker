@@ -1,57 +1,54 @@
-# Temperature and Humidity Sensor
+# Introduction
 
-This project uses an ESP8266 and a DHT11 sensor to measure temperature and humidity and send the data to a web API save to database and also there web server you can accses it using ip to see them live.
+This code is an IoT project that monitors temperature and humidity using the ESP8266 Wi-Fi module and a DHT11 sensor. The data is displayed on a web server running on the ESP8266 and can be sent to a remote server using HTTP POST requests.
 
   [![Build Status](https://img.shields.io/github/forks/YoussofKhawaja/IoT-Climate-Tracker.svg)](https://github.com/YoussofKhawaja/IoT-Climate-Tracker)
   [![Build Status](https://img.shields.io/github/stars/YoussofKhawaja/IoT-Climate-Tracker.svg)](https://github.com/YoussofKhawaja/IoT-Climate-Tracker)
   [![License](https://img.shields.io/github/license/YoussofKhawaja/IoT-Climate-Tracker.svg)](https://github.com/YoussofKhawaja/IoT-Climate-Tracker)
   ![Arduino](https://github.com/YoussofKhawaja/IoT-Climate-Tracker/actions/workflows/Arduino.yml/badge.svg)
   ![ASP Core](https://github.com/YoussofKhawaja/IoT-Climate-Tracker/actions/workflows/dotnet.yml/badge.svg)
+  
 ## Preview for web server and api
-- [Web server](https://localclimate.youssofkhawaja.com)
+- [Web server from ESP8266](https://localclimate.youssofkhawaja.com)
 - [API](https://dhtdataapi.azurewebsites.net/api/DHTData) (Get everything in database saved)
-- [API](https://dhtdataapi.azurewebsites.net/api/DHTData/last) (Last data by datetime)
+- [API](https://dhtdataapi.azurewebsites.net/api/DHTData/last) (Last data from database by Datetime)
 
+## Requirements
 
-## Hardware components
-- ESP8266
+- ESP8266 Wi-Fi module
 - DHT11 sensor
-- Breadboard
-- Jumper wires
-- USB cable
+- Arduino IDE
+- ESP8266 libraries (ESP8266WiFi, WiFiClient, ESP8266WebServer, ESP8266HTTPClient, and DHT)
+### If you want API:
+- .Net 7
+- postgreSQL
 
-## Software components
-- Arduino Integrated Development Environment (IDE)
-- DHT sensor library
+## Installation
+
+1. Install the required libraries in the Arduino IDE:
+    - ESP8266WiFi
+    - WiFiClient
+    - ESP8266WebServer
+    - ESP8266HTTPClient
+    - DHT
+2. Clone or download the repository to your local machine.
+3. Open the .ino file in the Arduino IDE and replace the placeholder values for ssid, password, and host with your Wi-Fi credentials and the URL of the remote server.
+4. Connect the ESP8266 module and the DHT11 sensor to the board following the pin assignments in the code.
+5. Upload the code to the board and check the serial monitor for the IP address of the web server.
+6. Install .NET Core 7 on your local machine.
+7. Open the solution in Visual Studio and edit the appsettings.json file to include the connection string for your PostgreSQL Server database.
+8. Build and run the solution.
 
 ## Connection diagram
 The connection diagram shows how to connect the DHT11 sensor to the ESP8266:
-- Connect the VCC pin of the sensor to 3.3V on the Arduino.
-- Connect the GND pin of the sensor to GND on the Arduino.
-- Connect the data pin of the sensor to digital pin 2 (D4) on the Arduino.
+- Connect the VCC pin of the sensor to 3.3V on the ESP8266.
+- Connect the GND pin of the sensor to GND on the ESP8266.
+- Connect the data pin of the sensor to digital pin 2 (D4) on the ESP8266.
 
-## Code
-The code for this project consists of two parts: the setup function and the loop function.
-- The setup function initializes the serial communication, the DHT sensor and the API endpoint.
-- The loop function reads the temperature and humidity values from the DHT sensor, sends the data to the API endpoint and logs the response to the serial monitor.
+## Usage
 
-## API EndPoint
-- {ur host}/api/DHTData (for get and post)
-
-## Installation
-- Install the Arduino IDE from the official website.
-- Connect the hardware components as shown in the connection diagram.
-- Download the DHT sensor library and install it in the Arduino IDE.
-- Download the code for this project and open it in the Arduino IDE.
-- Update the API endpoint and other variables in the code as needed.
-- Upload the code to the NodeMCU ESP8266.
-- Open the serial monitor in the Arduino IDE to view the log messages.
-
-## Installation for Web Api
-- Install .Net 7
-- Install postgres for database
-- edit Appsettings.json and add your connection string to database
-- run command in project (dotnet run)
+Once the code is uploaded and the board is connected to the Wi-Fi network, you can access the web page displaying the temperature and humidity data by visiting the IP address of the ESP8266 in a web browser. The data will be sent to the remote server at regular intervals specified in the code.
 
 ## Contributing
-If you have any suggestions or improvements for this project, feel free to open a pull request on GitHub.
+
+If you would like to contribute to this project, you can submit a pull request or open an issue on the GitHub repository.
