@@ -24,4 +24,4 @@ jobs:
     
     - name: Build Arduino sketch
       run: |
-        arduino --board esp8266:esp8266:3.1.0 --verify Arduino/ArduinoDHT/ArduinoDHT.ino
+        $HOME/arduino-$ARDUINO_IDE_VERSION/arduino --board esp8266:esp8266:3.1.0 --verify Arduino/ArduinoDHT/ArduinoDHT.ino
