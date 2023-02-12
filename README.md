@@ -19,7 +19,6 @@ This code is an IoT project that monitors temperature and humidity using the ESP
 - DHT11 sensor
 - Arduino IDE
 - ESP8266 libraries (ESP8266WiFi, WiFiClient, ESP8266WebServer, ESP8266HTTPClient, and DHT)
-### If you want API:
 - .Net 7
 - postgreSQL
 
