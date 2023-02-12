@@ -19,7 +19,7 @@ jobs:
       run: |
         curl -fsSL https://downloads.arduino.cc/arduino-$ARDUINO_IDE_VERSION-linux64.tar.xz | tar xJf - -C $HOME/
         export PATH=$PATH:$HOME/arduino-$ARDUINO_IDE_VERSION
-        arduino --install-boards esp8266:esp8266:nodemcuv2
+        arduino --install-boards esp8266:esp8266:nodemcu
     
     - name: Build Arduino sketch
       run: |
