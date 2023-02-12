@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore DHT/DHT.csproj
     - name: Build
-      run: dotnet --no-restore DHT/DHT.csproj
+      run: dotnet build DHT/DHT.csproj --no-restore
     - name: Test
       run: dotnet test DHT/DHT.csproj --no-build --verbosity normal
