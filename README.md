@@ -10,6 +10,7 @@ This project uses an ESP8266 and a DHT11 sensor to measure temperature and humid
 ## Preview for web server and api
 - [Web server](https://localclimate.youssofkhawaja.com)
 - [API](https://dhtdataapi.azurewebsites.net/api/DHTData) (Get everything in database saved)
+- [API](https://dhtdataapi.azurewebsites.net/api/DHTData/last) (Last data by datetime)
 
 
 ## Hardware components
