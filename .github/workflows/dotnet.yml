@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet DHT restore
+      run: dotnet DHT/DHT.csproj restore
     - name: Build
-      run: dotnet DHT build --no-restore
+      run: dotnet DHT/DHT.csproj build --no-restore
     - name: Test
-      run: dotnet DHT test --no-build --verbosity normal
+      run: dotnet DHT/DHT.csproj test --no-build --verbosity normal
