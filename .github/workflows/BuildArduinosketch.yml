@@ -14,25 +14,28 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Setup Arduino IDE
-      uses: actions/setup-arduino@v1
+    - name: Setup Arduino CLI
+      uses: actions/setup-arduino-cli@v1
       with:
-        arduino-version: ${{ env.ARDUINO_IDE_VERSION }}
+        arduino-cli-version: 0.10.0
 
     - name: Install ESP8266 Board
       run: |
-        arduino --install-boards "esp8266:esp8266"
-        arduino --board-manager-pref "boardsmanager.additional.urls=${ARDUINO_BOARD_MANAGER_URL}"
-        arduino --install-boards "esp8266:esp8266"
+        arduino-cli core update-index
+        arduino-cli core install esp8266:esp8266
+        arduino-cli config init
+        arduino-cli config set board_manager.additional_urls ${ARDUINO_BOARD_MANAGER_URL}
+        arduino-cli core update-index
+        arduino-cli core install esp8266:esp8266
 
     - name: Build Sketch
       run: |
-        arduino --verify --board esp8266:esp8266:nodemcu Arduino/ArduinoDHT/ArduinoDHT.ino
+        arduino-cli compile --fqbn esp8266:esp8266:nodemcu Arduino/ArduinoDHT/ArduinoDHT.ino
 
     - name: Upload Sketch
       if: always()
       run: |
-        arduino --upload --board esp8266:esp8266:nodemcu --port /dev/ttyUSB0 Arduino/ArduinoDHT/ArduinoDHT.ino
+        arduino-cli upload -p /dev/ttyUSB0 --fqbn esp8266:esp8266:nodemcu Arduino/ArduinoDHT/ArduinoDHT.ino
 
     - name: Display log output
       run: |
