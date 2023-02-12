@@ -50,6 +50,7 @@ The code for this project consists of two parts: the setup function and the loop
 ## Installation for Web Api
 - Install .Net 7
 - Install postgres for database
+- edit Appsettings.json and add your connection string to database
 - run command in project (dotnet run)
 
 ## Contributing
