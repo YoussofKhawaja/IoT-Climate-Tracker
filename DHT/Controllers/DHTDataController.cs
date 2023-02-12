@@ -32,5 +32,13 @@ namespace DHT.Controllers
             var data = _context.DHTDatas.ToList();
             return Ok(data);
         }
+        
+        //one way to get last data
+        [HttpGet("last")]
+        public IActionResult GetLastData()
+        {
+            var data = _context.DHTDatas.OrderByDescending(x => x.Timestamp).FirstOrDefault();
+            return Ok(data);
+        }
     }
 }

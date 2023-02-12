@@ -398,3 +398,6 @@ FodyWeavers.xsd
 *.sln.iml
 DHT/.idea/.idea.DHT.dir/.idea/workspace.xml
 DHT/.idea/.idea.DHT.dir/.idea/projectSettingsUpdater.xml
+DHT/.idea/.idea.DHT.dir/.idea/indexLayout.xml
+DHT/.idea/.idea.DHT.dir/.idea/discord.xml
+DHT/.idea/.idea.DHT.dir/.idea/vcs.xml

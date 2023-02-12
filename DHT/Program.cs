@@ -18,7 +18,7 @@ namespace DHT
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<DHTDataContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
-
+            
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll", builder =>
@@ -28,13 +28,13 @@ namespace DHT
                         .AllowAnyHeader();
                 });
             });
-
+            
             using (var scope = builder.Services.BuildServiceProvider().CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<DHTDataContext>();
                 context.Database.Migrate();
             }
-
+            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -43,7 +43,7 @@ namespace DHT
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            
             app.UseCors("AllowAll");
 
             app.UseHttpsRedirection();
