@@ -23,4 +23,4 @@ jobs:
     
     - name: Build Arduino sketch
       run: |
-        arduino --board esp8266:esp8266:nodemcuv2 --verify Arduino/ArduinoDHT/ArduinoDHT.ino
+        arduino --board esp8266:esp8266:nodemcu --verify Arduino/ArduinoDHT/ArduinoDHT.ino
