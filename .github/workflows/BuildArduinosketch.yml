@@ -1,31 +1,39 @@
-name: Build Arduino sketch
+name: Build NodeMCU 1.0 (ESP8266)
 
 on: [push]
 
 env:
-  ARDUINO_IDE_VERSION: 2.0.3
+  ARDUINO_IDE_VERSION: 1.8.13
+  ARDUINO_BOARD_MANAGER_URL: https://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install dependencies
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Arduino IDE
+      uses: actions/setup-arduino@v1
+      with:
+        arduino-version: ${{ env.ARDUINO_IDE_VERSION }}
+
+    - name: Install ESP8266 Board
       run: |
-        sudo apt-get update
-        sudo apt-get install -y curl tar
-    
-    - name: Download and install Arduino IDE
+        arduino --install-boards "esp8266:esp8266"
+        arduino --board-manager-pref "boardsmanager.additional.urls=${ARDUINO_BOARD_MANAGER_URL}"
+        arduino --install-boards "esp8266:esp8266"
+
+    - name: Build Sketch
       run: |
-        curl -fsSL https://downloads.arduino.cc/arduino-$ARDUINO_IDE_VERSION-linux64.tar.xz | tar xJf - -C $HOME/
-        export PATH=$PATH:$HOME/arduino-$ARDUINO_IDE_VERSION
-        arduino --pref "boardsmanager.additional.urls=https://arduino.esp8266.com/stable/package_esp8266com_index.json" --save-prefs
-        arduino --install-boards esp8266:esp8266:3.1.0
-        
-    - name: Install board definition
+        arduino --verify --board esp8266:esp8266:nodemcu Arduino/ArduinoDHT/ArduinoDHT.ino
+
+    - name: Upload Sketch
+      if: always()
       run: |
-        $HOME/arduino-$ARDUINO_IDE_VERSION/arduino --install-boards esp8266:esp8266:3.1.0
-    
-    - name: Build Arduino sketch
+        arduino --upload --board esp8266:esp8266:nodemcu --port /dev/ttyUSB0 Arduino/ArduinoDHT/ArduinoDHT.ino
+
+    - name: Display log output
       run: |
-        $HOME/arduino-$ARDUINO_IDE_VERSION/arduino --board esp8266:esp8266:3.1.0 --verify Arduino/ArduinoDHT/ArduinoDHT.ino
+        echo "Build completed!"
