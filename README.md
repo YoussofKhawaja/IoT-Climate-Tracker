@@ -9,9 +9,9 @@ This code is an IoT project that monitors temperature and humidity using the ESP
   ![ASP Core](https://github.com/YoussofKhawaja/IoT-Climate-Tracker/actions/workflows/dotnet.yml/badge.svg)
   
 ## Preview for web server and api
-- [Web server from ESP8266](https://localclimate.youssofkhawaja.com)
-- [API](https://dhtdataapi.azurewebsites.net/api/DHTData) (Get everything in database saved)
-- [API](https://dhtdataapi.azurewebsites.net/api/DHTData/last) (Last data from database by Datetime)
+- Web server from ESP8266 not public its local use only.
+- [API](https://localweather-api.youssofkhawaja.com/api/DHTData) (Get everything in database saved)
+- [API](https://localweather-api.youssofkhawaja.com/api/DHTData/last) (Last data from database by Datetime)
 
 ## Requirements
 
