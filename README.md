@@ -7,7 +7,7 @@ This code is an IoT project that monitors temperature and humidity using the ESP
   [![License](https://img.shields.io/github/license/YoussofKhawaja/IoT-Climate-Tracker.svg)](https://github.com/YoussofKhawaja/IoT-Climate-Tracker)
   ![Arduino](https://github.com/YoussofKhawaja/IoT-Climate-Tracker/actions/workflows/Arduino.yml/badge.svg)
   ![ASP Core](https://github.com/YoussofKhawaja/IoT-Climate-Tracker/actions/workflows/dotnet.yml/badge.svg)
-  
+
 ## Preview for web server and api
 - Web server from ESP8266 not public its local use only.
 - [API](https://localweather-api.youssofkhawaja.com/api/DHTData) (Get everything in database saved)
@@ -18,7 +18,7 @@ This code is an IoT project that monitors temperature and humidity using the ESP
 - ESP8266 Wi-Fi module
 - DHT11 sensor
 - Arduino IDE
-- ESP8266 libraries (ESP8266WiFi, WiFiClient, ESP8266WebServer, ESP8266HTTPClient, and DHT)
+- ESP8266 Libraries (ESP8266WiFi, WiFiClient, ESP8266WebServer, ESP8266HTTPClient, and DHT)
 - .Net 7
 - postgreSQL
 
